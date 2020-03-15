@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.d1b05096.chunk.css",
-    "main.js": "/static/js/main.5500c269.chunk.js",
-    "main.js.map": "/static/js/main.5500c269.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.bd4d9dd6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.bd4d9dd6.js.map",
-    "static/js/2.5f1eac52.chunk.js": "/static/js/2.5f1eac52.chunk.js",
-    "static/js/2.5f1eac52.chunk.js.map": "/static/js/2.5f1eac52.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.28bf4bb095254ec9400291a15b8886c2.js": "/precache-manifest.28bf4bb095254ec9400291a15b8886c2.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.5f1eac52.chunk.js.LICENSE.txt": "/static/js/2.5f1eac52.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/jewelery-ar-app/static/css/main.d1b05096.chunk.css",
+    "main.js": "/jewelery-ar-app/static/js/main.4c98058a.chunk.js",
+    "main.js.map": "/jewelery-ar-app/static/js/main.4c98058a.chunk.js.map",
+    "runtime-main.js": "/jewelery-ar-app/static/js/runtime-main.e786e0f4.js",
+    "runtime-main.js.map": "/jewelery-ar-app/static/js/runtime-main.e786e0f4.js.map",
+    "static/js/2.5f1eac52.chunk.js": "/jewelery-ar-app/static/js/2.5f1eac52.chunk.js",
+    "static/js/2.5f1eac52.chunk.js.map": "/jewelery-ar-app/static/js/2.5f1eac52.chunk.js.map",
+    "index.html": "/jewelery-ar-app/index.html",
+    "precache-manifest.1e732b2325412da17885f3c4e2f171c8.js": "/jewelery-ar-app/precache-manifest.1e732b2325412da17885f3c4e2f171c8.js",
+    "service-worker.js": "/jewelery-ar-app/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/jewelery-ar-app/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.5f1eac52.chunk.js.LICENSE.txt": "/jewelery-ar-app/static/js/2.5f1eac52.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/jewelery-ar-app/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.bd4d9dd6.js",
+    "static/js/runtime-main.e786e0f4.js",
     "static/js/2.5f1eac52.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.5500c269.chunk.js"
+    "static/js/main.4c98058a.chunk.js"
   ]
 }
