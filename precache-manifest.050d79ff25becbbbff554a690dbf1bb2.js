@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "104c267ee8dc6cfde9867b714b55f861",
+    "revision": "c504de8e700c137f3aea1db7d25e210b",
     "url": "/jewelery-ar-app/index.html"
   },
   {
-    "revision": "5a72e1f2c154c1545c71",
+    "revision": "6d8f9889e695c3b6dfd7",
     "url": "/jewelery-ar-app/static/css/main.d1b05096.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jewelery-ar-app/static/js/2.d298143c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5a72e1f2c154c1545c71",
-    "url": "/jewelery-ar-app/static/js/main.d3abb85f.chunk.js"
+    "revision": "6d8f9889e695c3b6dfd7",
+    "url": "/jewelery-ar-app/static/js/main.b5ba04be.chunk.js"
   },
   {
     "revision": "3f04b7cc14ff27cfd6db",

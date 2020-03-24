@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/jewelery-ar-app/static/css/main.d1b05096.chunk.css",
-    "main.js": "/jewelery-ar-app/static/js/main.d3abb85f.chunk.js",
-    "main.js.map": "/jewelery-ar-app/static/js/main.d3abb85f.chunk.js.map",
+    "main.js": "/jewelery-ar-app/static/js/main.b5ba04be.chunk.js",
+    "main.js.map": "/jewelery-ar-app/static/js/main.b5ba04be.chunk.js.map",
     "runtime-main.js": "/jewelery-ar-app/static/js/runtime-main.e786e0f4.js",
     "runtime-main.js.map": "/jewelery-ar-app/static/js/runtime-main.e786e0f4.js.map",
     "static/js/2.d298143c.chunk.js": "/jewelery-ar-app/static/js/2.d298143c.chunk.js",
     "static/js/2.d298143c.chunk.js.map": "/jewelery-ar-app/static/js/2.d298143c.chunk.js.map",
     "index.html": "/jewelery-ar-app/index.html",
-    "precache-manifest.2b5a619e3386e424930ec36e61f0291a.js": "/jewelery-ar-app/precache-manifest.2b5a619e3386e424930ec36e61f0291a.js",
+    "precache-manifest.050d79ff25becbbbff554a690dbf1bb2.js": "/jewelery-ar-app/precache-manifest.050d79ff25becbbbff554a690dbf1bb2.js",
     "service-worker.js": "/jewelery-ar-app/service-worker.js",
     "static/css/main.d1b05096.chunk.css.map": "/jewelery-ar-app/static/css/main.d1b05096.chunk.css.map",
     "static/js/2.d298143c.chunk.js.LICENSE.txt": "/jewelery-ar-app/static/js/2.d298143c.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.e786e0f4.js",
     "static/js/2.d298143c.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.d3abb85f.chunk.js"
+    "static/js/main.b5ba04be.chunk.js"
   ]
 }
