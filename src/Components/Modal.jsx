@@ -10,8 +10,8 @@ import ReactLoading from 'react-loading';
 const config = {
   bucketName: 'gift-audio-files',
   region: 'us-east-2',
-  accessKeyId: 'AKIAI6RHVD55A5FTBLOA',
-  secretAccessKey: '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',
+  accessKeyId: '',
+  secretAccessKey: '',
 }
 
 const mappingOfLinkNames =
@@ -114,9 +114,63 @@ function ModalToMakeSelection(props) {
       })
   }
 
+  const getPresignedPostData = selectedFile => {
+    return new Promise(resolve => {
+      const xhr = new XMLHttpRequest();
+      
+      // Set the proper URL here.
+      const url = "https://2eyfd024bh.execute-api.us-east-2.amazonaws.com/Stage/preSignedUrl";
+      
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.send(
+        JSON.stringify({
+          name: selectedFile.name,
+          type: selectedFile.type
+        })
+      );
+      xhr.onload = function() {
+        resolve(JSON.parse(this.responseText));
+      };
+    });
+  };
+
+  const uploadFileToS3 = (presignedPostData, file) => {
+    return new Promise((resolve, reject) => {
+      const formData = new FormData();
+      Object.keys(presignedPostData.fields).forEach(key => {
+        formData.append(key, presignedPostData.fields[key]);
+      });
+  
+      // Actual file has to be appended last.
+      formData.append("file", file);
+  
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", presignedPostData.url, true);
+      xhr.send(formData);
+      xhr.onload = function() {
+        this.status === 204 ? resolve() : reject(this.responseText);
+      };
+    });
+  };
+  
+
   // convert this to a promise - on successs proceed to close, or stay 
-  const saveOnClick = (event) => {
-    uploadFile(file, config)
+  async function saveOnClick (event) {
+   // uploadFile(file, config)
+   if(file)
+   {
+    const { data: presignedPostData } = await getPresignedPostData(file);
+
+    try {
+      const { file } = file.src;
+      await uploadFileToS3(presignedPostData, file);
+      console.log("File was successfully uploaded!");
+    } catch (e) {
+      console.log("An error occurred!", e.message);
+    }
+
+   }
     props.onHide()
 
   }
