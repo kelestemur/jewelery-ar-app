@@ -114,63 +114,45 @@ function ModalToMakeSelection(props) {
       })
   }
 
-  const getPresignedPostData = selectedFile => {
-    return new Promise(resolve => {
-      const xhr = new XMLHttpRequest();
-      
-      // Set the proper URL here.
-      const url = "https://2eyfd024bh.execute-api.us-east-2.amazonaws.com/Stage/preSignedUrl";
-      
-      xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.send(
-        JSON.stringify({
-          name: selectedFile.name,
-          type: selectedFile.type
-        })
-      );
-      xhr.onload = function() {
-        resolve(JSON.parse(this.responseText));
-      };
-    });
+  const getPresignedUrl = (file) => {
+    setLoading(true)                                                       
+    axios.get(`https://2eyfd024bh.execute-api.us-east-2.amazonaws.com/Stage/preSignedUrl?fileName=${file.name}`)
+    .then(data => {
+      setLoading(false)
+      uploadFileToS3(data.data.fileUploadURL,file)
+    }).catch(error => {
+      console.log(error)
+      setError(error)
+      setLoading(false)
+    })
   };
 
-  const uploadFileToS3 = (presignedPostData, file) => {
-    return new Promise((resolve, reject) => {
-      const formData = new FormData();
-      Object.keys(presignedPostData.fields).forEach(key => {
-        formData.append(key, presignedPostData.fields[key]);
-      });
-  
-      // Actual file has to be appended last.
-      formData.append("file", file);
-  
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", presignedPostData.url, true);
-      xhr.send(formData);
-      xhr.onload = function() {
-        this.status === 204 ? resolve() : reject(this.responseText);
-      };
-    });
+  const uploadFileToS3 = (preSignedUrl, file) => {
+    setLoading(true)
+
+    axios({
+      method: "PUT",
+      url: preSignedUrl,
+      data: file,
+      headers: { "Content-Type": "multipart/form-data" }
+  })
+      .then(res => {
+        var baseAudioUrl = res.config.url.split(/[?#]/)[0] 
+        setLink({ ...link, AudioLink: baseAudioUrl })
+        setLoading(false)  
+        console.log(res)
+      }).catch(error => {
+        console.log(error)
+        setError(error)
+        setLoading(false)
+      })
   };
   
 
   // convert this to a promise - on successs proceed to close, or stay 
-  async function saveOnClick (event) {
+  const saveOnClick = (event) => {
    // uploadFile(file, config)
-   if(file)
-   {
-    const { data: presignedPostData } = await getPresignedPostData(file);
-
-    try {
-      const { file } = file.src;
-      await uploadFileToS3(presignedPostData, file);
-      console.log("File was successfully uploaded!");
-    } catch (e) {
-      console.log("An error occurred!", e.message);
-    }
-
-   }
+    getPresignedUrl(file) // get presigned url, then upload
     props.onHide()
 
   }
