@@ -3,12 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import { Card, Button, Image, Col, Alert, Row } from 'react-bootstrap';
 import ModalToMakeSelection from './Components/Modal.jsx';
+import PhotoGallery from './Components/PhotoGallery.jsx';
 import QRCode from 'qrcode.react';
 
 
 function ExamplePage() {
 
     const [modalShow, setModalShow] = React.useState(false);
+    const [photoGalleryModalShow, setPhotoGalleryModalShow] = React.useState(false);
     const [id, setId] = React.useState("0ddbed79-a1be-4400-b690-99da7c9d4515")
     const [imageLink, setImageLink] = React.useState(null)
 
@@ -33,6 +35,10 @@ function ExamplePage() {
                     <Button variant="primary" onClick={() => setModalShow(true)}>
                         Customize
                   </Button>
+                  &nbsp;&nbsp;&nbsp;
+                  <Button variant="primary" onClick={() => setPhotoGalleryModalShow(true)}>
+                        Photo Gallery
+                  </Button>
                 </Card.Body>
             </Card>
             <Row>
@@ -56,6 +62,11 @@ function ExamplePage() {
                 onHide={() => setModalShow(false)}
                 getid={getTheId}
                 getimagelink={getTheImageLink}
+
+            /> 
+            <PhotoGallery
+                show={photoGalleryModalShow}
+                onHide={() => setPhotoGalleryModalShow(false)}
 
             /> 
         <span>

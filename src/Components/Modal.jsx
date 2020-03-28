@@ -7,13 +7,6 @@ import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
 
-const config = {
-  bucketName: 'gift-audio-files',
-  region: 'us-east-2',
-  accessKeyId: '',
-  secretAccessKey: '',
-}
-
 const mappingOfLinkNames =
 {
   "Dove": "https://gift-audio-files.s3.us-east-2.amazonaws.com/pattern-dove-gray+(2).patt",
@@ -96,22 +89,6 @@ function ModalToMakeSelection(props) {
 
   const getSelectedPatternName = (selectedPattern) => {
     setLink({ ...link, PatternLink: selectedPattern })
-  }
-
-  const uploadFile = (file, config) => {
-    setLoading(true)
-    S3FileUpload
-      .uploadFile(file, config)
-      .then((data) => {
-        setLoading(false)
-        console.log("Audio successfully uploaded to the following location " + data.location)
-        setLink({ ...link, AudioLink: data.location })
-      })
-      .catch(err => {
-        setLoading(false)
-        setError(err)
-        console.error(err)
-      })
   }
 
   const getPresignedUrl = (file) => {
