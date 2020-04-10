@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 function AnimationsDropdown(props) {
-    const [animations, setAnimations] = useState(["Music Notes"])
+    const [animations, setAnimations] = useState(["Music Notes", "Robin Bird"])
     const [selectedAnimation, setSelectedAnimation] = useState(null)
 
     useEffect(

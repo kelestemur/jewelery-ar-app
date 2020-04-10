@@ -11,7 +11,8 @@ const mappingOfLinkNames =
 {
   "Dove": "https://gift-audio-files.s3.us-east-2.amazonaws.com/pattern-dove-gray+(2).patt",
   "Galatasaray Logo": "https://gift-audio-files.s3.us-east-2.amazonaws.com/galatasary-logo.patt",
-  "Music Notes": "https://gift-audio-files.s3.us-east-2.amazonaws.com/scene.gltf"
+  "Music Notes": "https://gift-audio-files.s3.us-east-2.amazonaws.com/scene.gltf",
+  "Robin Bird":"https://gift-audio-files.s3.us-east-2.amazonaws.com/robinBird.gltf",
 
 }
 
