@@ -118,6 +118,7 @@ function ModalToMakeSelection(props) {
         var baseAudioUrl = res.config.url.split(/[?#]/)[0] 
         setLink({ ...link, AudioLink: baseAudioUrl })
         setLoading(false)  
+        props.onHide() // close the modal
         console.log(res)
       }).catch(error => {
         console.log(error)
@@ -126,13 +127,9 @@ function ModalToMakeSelection(props) {
       })
   };
   
-
-  // convert this to a promise - on successs proceed to close, or stay 
   const saveOnClick = (event) => {
    // uploadFile(file, config)
     getPresignedUrl(file) // get presigned url, then upload
-    props.onHide()
-
   }
 
   // this validation should be taken care of on the backend
