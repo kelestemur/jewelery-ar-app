@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/jewelery-ar-app/precache-manifest.abdcc18a1ff7889211da9e6b4398eec8.js"
+  "/jewelery-ar-app/precache-manifest.a7fb24b9d3888203a00b925247b82edc.js"
 );
 
 self.addEventListener('message', (event) => {
